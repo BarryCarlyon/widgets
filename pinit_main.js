@@ -646,7 +646,7 @@
           var img = $.f.make({'IMG': {
             'alt': $.f.filter(r.data.user.full_name),
             'title': $.f.filter(r.data.user.full_name),
-            'src': r.data.user.image_small_url.replace(/_30.jpg/, '_60.jpg')
+            'src': r.data.user.image_small_url.replace(/_30.jpg/, '_60.jpg').replace('http://media-cache-', 'https://s-media-cache-')
           }});
 
           avatar.appendChild(img);
@@ -844,7 +844,7 @@
                 // is data-pin-width set to large?
                 width = $.f.getData(parent, 'width');
                 if (width === 'large') {
-                  thumb.url = thumb.url.replace(/237x/, '345x');
+                  thumb.url = thumb.url.replace(/237x/, '345x').replace('http://media-cache-', 'https://s-media-cache-');
                   thumb.height = ~~(thumb.height * 1.4556);
                   thumb.width = 345;
                   container.className = container.className + ' ' + $.a.k + '_large';
