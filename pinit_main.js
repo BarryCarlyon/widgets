@@ -579,8 +579,10 @@
               'height': data[i].images['237x'].height * (scaleFactors.width / data[i].images['237x'].width),
               'width': scaleFactors.width
             };
+
+            // SSL PATCH
             var img = $.f.make({'IMG': {
-              'src': data[i].images['237x'].url,
+              'src': data[i].images['237x'].url.replace('http://media-cache-', 'https://s-media-cache-'),
               'data-pin-nopin': 'true',
               'height': scale.height,
               'width': scale.width,
